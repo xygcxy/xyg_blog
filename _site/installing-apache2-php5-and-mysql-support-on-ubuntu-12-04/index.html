@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Installing apache2, php5 and MySQL support on Ubuntu 12.04</title>
+    
+    <meta name="author" content="">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter/css/prettify.css" rel="stylesheet" type="text/css">
+    <script src="/assets/themes/twitter/js/prettify.js"></script>
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+    
+<!--    font-awesome-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  </head>
+
+  <body onload="prettyPrint()">
+    <div class="navbar">
+      <div class="navbar-inner">
+       <div class="nav-narrow">
+          <a class="brand" href="/"><span class="fa fa-mortar-board (alias)"></span></a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">文章</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">分类</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">页面</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">标签</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<!--
+<div class="page-header">
+  <h1>Installing apache2, php5 and MySQL support on Ubuntu 12.04 </h1>
+</div>
+-->
+ 
+
+<div class="row-fluid post-full">
+  <div class="span12 ">
+    <div class="content card">
+        <div class="date_label">
+          <div class="day_month">
+          06/29
+          </div>
+          <div class="year">
+          2014
+          </div>
+        </div>
+      <p>Here are some quick step by step guide to follow, when you about to setup php5, MySQL web environment on ubuntu 12.04
+(Precise Pangolin). This guide would help you to install Apache2 web server on an Ubuntu 12.04 with php5
+support (mod_php) and MySQL.</p>
+
+<h3 id="step-1---go-to-terminal">Step 1 - Go to terminal</h3>
+
+<p>In ubuntu 12.04 there is a shortcut key to open a terminal window. Try [ctrl+alt+t] to open terminal window.</p>
+
+<pre>
+Shortcut key for open a new terminal - [ctrl+alt+t] 
+</pre>
+
+<h3 id="step-2---gain-root-privileges">Step 2 - Gain root privileges</h3>
+
+<p>Before you start execute any commands, make sure you logged-in as root. Try following command to have root access.
+The command will ask your root password, hit enter after input your root password.</p>
+
+<pre class="terminal">
+#login as super user
+<code>sudo su</code>
+</pre>
+
+<h3 id="step-3---installing-mysql-5">Step 3 - Installing MySQL 5</h3>
+
+<p>Use following command to install MySQL.</p>
+
+<pre class="terminal">
+# install mysql server along with the client
+apt-get install mysql-server mysql-client
+</pre>
+
+<p>Install would ask you to provide a password for the MySQL root user.</p>
+
+<blockquote>
+  <p>New password for the MySQL “root” user: &lt; yournewpassword
+Repeat password for the MySQL “root” user: &lt; yournewpassword</p>
+</blockquote>
+
+<h3 id="step-4---installing-apache2">Step 4 - Installing Apache2</h3>
+
+<p>Try following command to install apache2.</p>
+
+<pre class="terminal">
+# install apache2
+apt-get install apache2
+</pre>
+
+<p>Double check by typing the <code>localhost</code> or ‘http://127.0.0.1’ on your browser. You should be able to see the Apache2 page.</p>
+
+<p>On Ubuntu Apache2 default document root is under <code>/var/www</code> and the configuration file is
+ under <code>/etc/apache2/apache2.conf</code>.</p>
+
+<p>Extra configurations are located in child directories of the <code>/etc/apach2</code> such as <code>/etc/apache2/mods-enabled</code>
+ (for Apache modules) and <code>/etc/apache2/sites-enabled</code> (for virtual hosts)</p>
+
+<h3 id="step-5---installing-php5">Step 5 - Installing php5</h3>
+
+<p>Install PHP5 and the Apache PHP5 module as follows:</p>
+
+<pre class="terminal">
+# install php5 and apache2 php module
+apt-get install php5 libapache2-mod-php5
+</pre>
+
+<p>You should restart Apache afterwards:</p>
+
+<pre class="terminal">
+# restart apache2 server
+/etc/init.d/apache2 restart
+</pre>
+
+<h3 id="step-6---get-mysql-support-in-php5">Step 6 - Get MySQL support in php5</h3>
+
+<p>To get MySQL support you can install <code>php5-mysql</code> package. But it is always better to install some other php5 modules
+as well. Here are some basic modules:</p>
+
+<pre class="terminal">
+# install multiple modules at ones
+apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+</pre>
+
+<p>Restart you apache after install above modules.</p>
+
+<pre class="terminal">
+# restart apache2
+/etc/init.d/apache2 restart
+</pre>
+
+<h3 id="step-7---finaly-test-your-php">Step 7 - Finaly test your php</h3>
+
+<p>The document root of the default web site is <code>/var/www</code>. Create a small PHP file <code>info.php</code> in that directory
+ and call it in a browser. The file will display lots of useful details about our PHP installation, such as the
+ installed PHP version, modules, etc.</p>
+
+<pre class="terminal">
+gedit /var/www/info.php
+</pre>
+
+<p><code>&lt;?php phpinfo(); // place this in /var/www/info.php ?&gt;</code></p>
+
+<p>Now try to view this file from your browser. <code>http://127.0.0.1/info.php</code>. You would see lots of information about LAMP
+(Linux+Apache2+MySQL+php) settings.</p>
+
+<p>Here are some external links for more reference.</p>
+
+<ul>
+  <li><a href="http://www.php.net/">php</a></li>
+  <li><a href="http://httpd.apache.org/">Apache</a></li>
+  <li><a href="http://www.mysql.com/">MySQL</a></li>
+</ul>
+
+<p>Hope this is useful to you.</p>
+
+    </div>
+
+ 
+<!--
+    <ul class="tag_box inline ">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="#ubuntu-ref">
+    		ubuntu <span>2</span>
+    	</a></li>
+     
+    	<li><a href="#guide-ref">
+    		guide <span>3</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+    -->
+    
+    <div class="pagination clearfix">
+      <ul class = "pull-right">
+      
+        <li class="prev disabled" ><a class="fa fa-arrow-circle-left"> 前一篇</a></li>
+      
+        <li><a class="fa fa-th" href=""> 所有日志</a></li>
+      
+        <li class="next"><a  href="/update-magento-url-after-migrate-site-from-one-environment-to-another" title="Update magento URL after migrate your site from one environment to another">后一篇 <span class="fa fa-arrow-circle-right">  </span></a></li>
+      
+      </ul>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+      </div>
+      
+      <footer class="card clearfix">
+        <span style="font-size:30px;"class="fa fa-github pull-left"></span><a href="https://github.com/enml/blog" style="display:inline-block;padding-right:80px;border-right:1px solid #bbb">fork me on GitHub</a>
+        <p class="pull-right">&copy; 2011 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+        
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
