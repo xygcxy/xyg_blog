@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Site settings
 title: Xu Yungeng's Blog
 tagline: And Tagline
@@ -59,3 +60,6 @@ exclude:
 sass:
   sass_dir: assets/css/_sass
   style: :compressed
+=======
+baseurl:     /xyg_blog
+>>>>>>> e3e4ce7ed382691dcf9d3a0afa19e8f36aa8c890
