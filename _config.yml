@@ -1,15 +1,27 @@
-name: "Blog of Yungeng Xu"
-description: "Web Front-End Blog by Yungeng Xu"
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     []
+keep_files:  ['.git','.svn']
+timezone:    nil
+encoding:    nil
 
-url: "https://xygcxy.github.io/"
+future:      true
+show_drafts: nil
+limit_posts: 0
+pygments:    true
 
-timezone: Asia/Shanghai
+relative_permalinks: true
 
-paginate: 20
+permalink:     date
+paginate_path: 'page:num'
 
-highlighter: pygments
+markdown:      maruku
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
 
-<<<<<<< HEAD
 excerpt_separator: "\n\n"
 
 safe:        false
@@ -17,11 +29,6 @@ watch:       false    # deprecated
 server:      false    # deprecated
 host:        0.0.0.0
 port:        4000
-baseurl:     /
-url:         https://xygcxy.github.com/xyg_blog/
+baseurl:     /xyg_blog
+url:         http://localhost:4000
 lsi:         false
-
-=======
-markdown: rdiscount
-permalink: pretty
->>>>>>> 60501f5de06f1bb7adbde1d10816b13cd639ac0d
