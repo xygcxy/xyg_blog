@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 寂寞先生
-tagline: 这，是一个寂寞的世界……
+title: Yungeng Xu
+tagline: Blog of Yungeng Xu……
 ---
 {% include JB/setup %}
 
