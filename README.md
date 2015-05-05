@@ -4,4 +4,4 @@
 * 使用了bootstrap框架
 * 使用font-awesome进行修饰
 * 基于：https://github.com/enml/blog
-* xygcxy/github.io/xyg_blog
+* https://xygcxy/github.io/xyg_blog
