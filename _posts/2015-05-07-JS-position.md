@@ -13,7 +13,7 @@ tags : [javascript,基础]
 var point_y = evt.clientY;
 var point_x = evt.clientX;
 ```  <br>
-其中evt为鼠标点击事件。
+其中evt为鼠标点击事件。<!--break-->
 
 ## 2）可视区域左上角的坐标，相对于整个页面(Page)左上角
 ```

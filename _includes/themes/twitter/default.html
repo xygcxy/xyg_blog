@@ -18,7 +18,12 @@
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <link href="{{ ASSET_PATH }}/css/prettify.css" rel="stylesheet" type="text/css">
-    <script src="{{ ASSET_PATH }}/js/prettify.js"></script>
+    <link href="{{ ASSET_PATH }}/css/animate.css" rel="stylesheet" type="text/css">
+    <script src="{{ ASSET_PATH }}/js/prettify.js" async="true"></script>
+    <script src="{{ ASSET_PATH }}/js/scrollHandler.js" defer="true"></script>
+<!--    <script src="{{ ASSET_PATH }}/js/util.js"></script>-->
+<!--    <script src="{{ ASSET_PATH }}/js/animate.js"></script>-->
+    <script src="{{ ASSET_PATH }}/js/jquery-1.11.0.min.js"></script>
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -36,7 +41,7 @@
   
   </head>
 
-  <body onload="prettyPrint()">
+  <body >
     <div class="navbar">
       <div class="navbar-inner">
        <div class="nav-narrow">
@@ -44,10 +49,15 @@
           <ul class="nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
+            {% assign about = about %}
             {% include JB/pages_list %}
           </ul>
         </div>
       </div>
+    </div>
+    <div class="go-top">
+      <div class="arrow"></div>
+      <div class="stick"></div>
     </div>
 
     <div class="container-narrow">
@@ -57,8 +67,9 @@
       </div>
       
       <footer class="card clearfix">
-        <span style="font-size:30px;"class="fa fa-github pull-left"></span><a href="https://github.com/xygcxy/xyg_blog/" style="display:inline-block;padding-right:80px;border-right:1px solid #bbb">fork me on GitHub</a>
-        <p class="pull-right">&copy; 2011 {{ site.author.name }}
+        <span style="font-size:30px;"class="fa fa-github pull-left"></span>
+        <a href="https://github.com/xygcxy/xyg_blog/" style="display:inline-block;padding-right:80px;border-right:1px solid #bbb">fork me on GitHub</a>
+        <p class="pull-right">&copy; 2015 {{ site.author.name }}
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
@@ -68,5 +79,18 @@
     </div>
 
     {% include JB/analytics %}
+    <script type="text/javascript">
+      $(function(){
+        $(window).scroll(function(){
+          if($(window).scrollTop()>800)
+            $('div.go-top').show();
+          else
+            $('div.go-top').hide();
+        });
+        $('div.go-top').click(function(){
+          $('html, body').animate({scrollTop :0 }, 1000);
+        });
+      });
+    </script>
   </body>
 </html>
