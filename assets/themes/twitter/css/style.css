@@ -212,7 +212,7 @@ a.footer-github:visited{
 .date_label{
 
   /*background-position:bottom left;*/
-  background-image:url('/image/button_bg.png');
+  background-image:url('img/button_bg.png');
   
   /* Multiple backgrounds version. The background images
      are defined individually in color classes */
@@ -244,12 +244,12 @@ a.footer-github:visited{
   
   /* Specifying a version with gradients according to */
   
-  background-image: url('/image/button_bg.png'), url('/image/button_bg.png'),
+  background-image: url('img/button_bg.png'), url('img/button_bg.png'),
             -moz-radial-gradient( center bottom, circle,
                         rgba(5,147,211,1) 0,rgba(89,208,244,0) 100px),
             -moz-linear-gradient(#0593d3, #0593d3);
 
-  background-image: url('/image/button_bg.png'), url('/image/button_bg.png'),
+  background-image: url('img/button_bg.png'), url('img/button_bg.png'),
             -webkit-gradient( radial, 50% 100%, 0, 50% 100%, 100,
                       from(rgba(5,147,211,1)), to(rgba(89,208,244,0))),
             -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0593d3), to(#0593d3));
@@ -257,12 +257,12 @@ a.footer-github:visited{
 
 .date_label:hover{
   
-  background-image: url('/image/button_bg.png'), url('/image/button_bg.png'),
+  background-image: url('img/button_bg.png'), url('img/button_bg.png'),
             -moz-radial-gradient( center bottom, circle,
                         rgba(5,147,211,1) 0,rgba(109,217,250,0) 100px),
             -moz-linear-gradient(#0593d3, #0593d3);
             
-  background-image: url('/image/button_bg.png'), url('/image/button_bg.png'),
+  background-image: url('img/button_bg.png'), url('img/button_bg.png'),
             -webkit-gradient( radial, 50% 100%, 0, 50% 100%, 100,
                       from(rgba(5,147,211,1)), to(rgba(109,217,250,0))),
             -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0593d3), to(#0593d3));
