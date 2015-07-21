@@ -174,7 +174,7 @@ $ git svn clone -r <svn_revision>:HEAD <svn_url> --trunk=<trunk> --tags=<tags> -
 
 - 常用命令就这几个
 
-![gitflow 基本命令](image/git-flow-commands.png)
+![gitflow 基本命令](/image/git-flow-commands.png)
 
 - 参数说明
   - 本地版 [Command Line Arguments](./gitflow_command_line_arguments.md)
@@ -184,7 +184,7 @@ $ git svn clone -r <svn_revision>:HEAD <svn_url> --trunk=<trunk> --tags=<tags> -
   - master & develop 为主要分支。所有的开发以 develop 为 base，master 分支始终保持 production-ready 状态
   - 除 master 和 develop 分支外，其它分支名前缀限定为：feaature，release，hotfixes
 
-![gitflow 开发模式](image/gitflow-dev-model.png)
+![gitflow 开发模式](/image/gitflow-dev-model.png)
 
 
 ## 参考资源
