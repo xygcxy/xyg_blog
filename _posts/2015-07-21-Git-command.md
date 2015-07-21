@@ -6,7 +6,7 @@ tagline: "Supporting tagline"
 tags : [Git,工具]
 ---
 {% include JB/setup %}
-# Javascript操作DOM的那些坑
+# Git 常用命令参考
 ---
 ## Git 常用命令参考
 
@@ -28,7 +28,7 @@ tags : [Git,工具]
 >
 > `$ git add -n template_*.js`
 
-
+<!--break-->
 #### `$ git commit [-a] [-m] [-e] [--amend] [--allow-empty] [-c] [<file>...]`
 
 - `-a` :  对工作区的修改和删除生效（剩了 git add 操作），但对新文件无效
